@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <form action="">
+            <h1>Cadastre-se.</h1>
+            <label for="nome">Nome:</label>
+            <input id="nome" type="text">
+            <br>
+            <label for="email">Email:</label>
+            <input id="email" type="email">
+            <br>
+            <label for="senha">Senha:</label>
+            <input id="senha" type="password">
+            <br>
+            <label for="senha_confirmar">Confirme a senha:</label>
+            <input id="senha" type="password">
+            <br>
+            <label for="termos">Aceito os termos e condições</label>
+            <input id="termos" type="checkbox">
+            <br>
+            <label for="estados">Estado: </label>
+            <select name="estados" id="estados">
+                <option value="selecione">Selecione</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="PR">Paraná</option>
+                <option value="RS">Rio Grande do Sul</option>
+                
+            </select>
+            <p>Gênero:</p>
+            <label for="feminino">Feminino</label>
+            <input id="feminino" type="radio" name="genero" value="feminino">
+            <label for="masculino">Masculino</label>
+            <input id="masculino" type="radio" name="genero" value="masculino">
+            <label for="nenhum">Nenhum</label>
+            <input id="nenhum" type="radio" name="genero" value="nenhum">
+            <label for="todos">Todos</label>
+            <input id="todos" type="radio" name="genero" value="todos">
+            <input type="submit">
+
+        </form>
+
+        <!--css funciona por ordem e especificidade: * < peso por elemento < peso por classe < peso por id 
+        reset css: margin 0, padding 0-->
+    </div>
+    
+</body>
+</html>
