@@ -1,2 +1,10 @@
-ssssssssssssssssssssssssssss
- fff
+Uma Regra CSS é utilizada para aplicar estilos a elementos de HTML.  É composta por dois elementos principais: seletor e declaração.
+Um seletor indica em quais elementos determinada regra será aplicada.
+Uma declaração é composta por uma propriedade e um valor. A propriedade indica o que será estilizado em tal elemento e o valor indica qual será essa estilização.
+
+Exemplo: 
+
+body {
+    color: pink;
+    font-size: 2px;
+}
