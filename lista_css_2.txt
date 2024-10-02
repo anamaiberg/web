@@ -1,0 +1,11 @@
+Seletores definem a quais elementos a regra de CSS será aplicada. 
+
+Os principais seletores são: 
+
+Seletor universal (*)
+
+Seletor por tag (p {})
+
+Seletor por classe (.p {});
+
+Seletor por id (#p {})
