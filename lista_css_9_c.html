@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px
+        }
+        .box{
+            display: inline-block;
+            border: 1px solid black;
+            text-align: center;
+            height: 22vh;
+            width: 22vw;
+
+        }
+        #box1{
+            background-color: blue;
+            position: fixed;
+            bottom: 0px;
+        }
+        #box2{
+            background-color: green;
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+        }
+        #box3{
+            background-color: red;
+        }
+        #box4{
+            background-color: yellow;
+            position: fixed;
+            right: 0px;
+        }
+        #box5{
+            background-color: magenta;
+            position: fixed;
+            left:  50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">5</div>
+    </div>
+    
+</body>
+</html>
+
+<!--
+position: static
+left, right, bottom, top desativados
+
+position: relative
+editáveis (left:100px)
+
+position: absolute;
+z-index: -1;
+
+Porque foram usadas positions específicas
+
+-->
