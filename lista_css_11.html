@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <style>
-        #box{
+        .box {
             border: 1px solid black;
             position: absolute;
             z-index: -1;
@@ -14,49 +14,124 @@
             bottom: 50px;
             height: 80vh;
             width: 35vw;
+            overflow-y: auto;
         }
-        #outro{
+        .outro {
+            border: 1px solid black;
+            border-radius: 5%;
+            height: 14vh;
+            width: 32vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px; 
+        }
+        .outro #img{
+            float: left;
+            border-radius: 50%;
+            height: 8vh;
+            width: 4vw;
+            background-image: url("Capivara.jpg");
+            background-size: cover;
+            margin-right: 5px;
+            margin-left: 8px;
+        }
+        .outro p{
+            overflow: hidden;
+        }
+        .eu {
             border: 1px solid black;
             border-radius: 5%;
             height: 12vh;
             width: 32vw;
+            padding-top: 20px;
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 10px; 
+            background-color: rgb(217, 253, 217);
+            
         }
-        
+        .eu #img{
+            float: right;
+            border-radius: 50%;
+            height: 8vh;
+            width: 4vw;
+            background-image: url("guaxinim2.webp");
+            background-size: cover;
+            margin-right: 8px;
+            margin-left: 5px;
+        }
+        .eu p{
+            overflow: hidden;
+            margin: 0;
+            float: right;
+        }
+        #nome{
+            margin-left: 25px;
+            color: grey;
+            font-size: small;
+            margin-bottom: 0px;
+        }
+        #hora{
+            float: right;
+            color: grey;
+            font-size: small;
+            margin-left: auto;
+            margin-right: 5px;
+        }
+        .mensagem{
+            border: 1px solid black;
+            border-radius: 5%;
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 15px;
+            height: 18vh;
+            width: 30vw;
+        }
+        textarea{
+            height: 14vh;
+            width: 29vw;
+            resize: none;
+        }
+        button{
+            float: right;
+        }
     </style>
 
 </head>
 <body>
 
     <div>
-        <div id="box">
-        <p id="nome">Paulo Silva</p>
-        <div id="outro">
-            <p>Olá, tudo bem?</p>
-            <p id="hora">00:50</p>
-        </div>
-        <p id="nome">Eu</p>
-        <div id="eu">
-            <p>Estou bem, e você?</p>
-            <p id="hora">00:55</p>
-        </div>
-        <p id="nome">Paulo Silva</p>
-        <div id="outro">
-            <p>Vamos sair hoje? sabe conversar e Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ducimus </p>
-            <p id="hora">01:01</p>
-        </div>
-        <p id="nome">Eu</p>
-        <div id="eu">
-            <p>Criatura...</p>
-            <p id="hora">00:55</p>
-        </div>
-        <div id="mensagem">
-            <form>
-                <textarea placeholder="Digite sua mensagem"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+        <div class="box">
+            <p id="nome">Paulo Silva</p>
+            <div class="outro">
+                <p id="img"></p>
+                <p>Olá, tudo bem?</p>
+                <p id="hora">00:50</p>
+            </div>
+            <p id="nome">Eu</p>
+            <div class="eu">
+                <p id="img"></p>
+                <p>Estou bem, e você?</p><br>
+                <p id="hora">00:55</p>
+            </div>
+            <p id="nome">Paulo Silva</p>
+            <div class="outro">
+                <p id="img"></p>
+                <p>Vamos sair hoje? sabe conversar e Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum ducimus.</p>
+                <p id="hora">01:01</p>
+            </div>
+            <p id="nome">Eu</p>
+            <div class="eu">
+                <p id="img"></p>
+                <p>Criatura...</p><br>
+                <p id="hora">00:55</p>
+            </div>
+            <div class="mensagem">
+                <form>
+                    <textarea placeholder="Digite sua mensagem"></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
 
