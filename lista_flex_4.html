@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        span{
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            margin: 10px;
+        }
+        .header{
+            height: 200px;
+            background-color: black;
+            display: flex;
+            align-items: flex-end;
+            padding-left: 35px;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+        .container{
+            display: flex;
+            width: 100%;
+        }
+        .navegacao{
+            width: 300px;
+            flex-direction: column;
+            background-color: orange;
+            display: flex;
+            text-align: center;
+            padding-top: 10px;
+            color: white;
+            font-weight: bold;
+        }
+        .conteudo-container{
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 300px);
+        }
+        .cabecalho, .conteudo, .rodape{
+            justify-content: center;
+            background-color: rgb(0, 140, 255);
+            display: flex;
+            text-align: center;
+            padding-top: 10px;
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+        .cabecalho{
+            height: 150px;
+        }
+        .conteudo{
+            height: 429px;
+            background-color: purple;
+        }
+        .rodape{
+            height: 140px;
+            background-color: rgb(0, 81, 255);
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><span></span><span></span><span></span></div>
+    <div class="container">
+        <div class="navegacao">NAVEGAÇÃO</div>
+        <div class="conteudo-container">
+            <div class="cabecalho">CABEÇALHO</div>
+            <div class="conteudo">CONTEÚDO</div>
+            <div class="rodape">RODAPÉ</div>
+        </div>
+    </div>
+</body>
+</html>
