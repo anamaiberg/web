@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        span{
+            display: inline-block;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: aquamarine;
+            margin: 10px;
+            
+        }
+        .container{
+            display: grid;
+            grid-template-areas:
+            "header header header header"
+            "nav cabecalho cabecalho cabecalho"
+            "nav conteudo conteudo conteudo"
+            "nav rodape rodape rodape"
+            ;
+            grid-template-rows: 200px 150px 429px 140px;
+            .header{
+                grid-area: header;
+                background-color: black;
+                display: flex;
+                align-items: flex-end;
+                padding-left: 35px;
+                padding-bottom: 20px;
+            }
+            .navegacao{
+                grid-area: nav;
+                background-color: orange;
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+                color: white;
+                font-weight: bold;
+            }
+            .cabecalho{
+                grid-area: cabecalho;
+                background-color: rgb(0, 140, 255);
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+                color: white;
+                font-weight: bold;
+            }
+            .conteudo{
+                grid-area: conteudo;
+                background-color: purple;
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+                color: white;
+                font-weight: bold;
+            }
+            .rodape{
+                grid-area: rodape;
+                background-color: rgb(0, 81, 255);
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="header"><span></span><span></span><span></span></div>
+    <div class="navegacao">NAVEGAÇÃO</div>
+    <div class="cabecalho">CABEÇALHO</div>
+    <div class="conteudo">CONTEÚDO</div>
+    <div class="rodape">RODAPÉ</div>
+</body>
+</html>
