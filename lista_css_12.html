@@ -8,6 +8,7 @@
     <style>
         body {
             margin: 0;
+            padding: 0;
             height: 100vh; 
         }
         .box {
@@ -19,6 +20,7 @@
             width: 30vw; 
             overflow-y: auto;
             z-index: 1000; 
+            background-color: white;
         }
         .outro, .eu {
             border: 1px solid black;
@@ -76,10 +78,71 @@
         button {
             float: right;
         }
+        
+        .menu p{
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+            left: 45%;
+            font-size: 25px;
+            text-decoration: underline;
+            color: blue;
+        }
+        .caixa{
+            position: relative;
+            left: 50%;
+            top: 20%;
+            transform: translate(-50%, -20%);
+            background-color: rgb(231, 227, 227);
+            border-radius: 5%;
+            height: 360px;
+            width: 700px;
+            margin-bottom: 20px;
+        }
+        .caixa img{
+            margin-top: 10px;
+            position: relative;
+            left: 8%;
+            top: 4%;
+            height: 250px;
+            width: 600px;
+            background-color: white;
+        }
+        .caixa p{
+            display: block;
+            position: relative;
+            left: 3%;
+        }
+        .menu img{
+            position: relative;
+            left: 25%;
+            top: 25%;
+            height: 200px;
+            width: 200px;
+            margin-top: 30px;
+        }
+        
     </style>
 
 </head>
 <body>
+    <div class="menu">
+        <img src="logo.png" alt="logo">
+        <p>home</p><p>sobre</p><p>contato</p>
+    </div>
+
+    <div class="caixa" id="caixa1">
+        <img src="pf.webp" alt="prato feito">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur ipsum veritatis omnis ipsam obcaecati numquam commodi repellendus cumque fugit, enim, impedit minima illo amet qui! Excepturi illum repellat aperiam.</p>
+    </div>
+    <div class="caixa" id="caixa2">
+        <img src="sorvete.png" alt="sorvete">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur ipsum veritatis omnis ipsam obcaecati numquam commodi repellendus cumque fugit, enim, impedit minima illo amet qui! Excepturi illum repellat aperiam.</p>
+    </div>
+    <div class="caixa" id="caixa3">
+        <img src="sorvete.png" alt="sorvete">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor consectetur ipsum veritatis omnis ipsam obcaecati numquam commodi repellendus cumque fugit, enim, impedit minima illo amet qui! Excepturi illum repellat aperiam.</p>
+    </div>
 
     <div class="box">
         <p id="nome">Paulo Silva</p>
