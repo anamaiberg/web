@@ -8,20 +8,66 @@
     <style>
         html{
             background-color: rgb(167, 161, 161);
+        }
+        body{
             margin: 0;
-            padding: 0;
         }
         .container{
-            
             display: flex;
             height: 900px;
-            width: 500px;
-            border: 2px solid purple;
+            width: 600px;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             margin: auto;
+            box-shadow: 2px 3px rgba(43, 42, 42, 0.5);
+            background-color: white;
             
+        }
+        .box{
+            display: flex;
+            align-items: center;
+            height: 225px;
+            width: 580px;
+        }
+        .box:nth-child(-n+3){
+            border-bottom: 1px solid rgb(194, 182, 182);
+        }
+        #box1 #img{
+            float: left;
+            border-radius: 50%;
+            height: 18vh;
+            width: 9vw;
+            background-image: url("guaxinim.jpg");
+            background-size: cover;
+            margin-left: 8px;
+        }
+        #box2 #img{
+            float: left;
+            border-radius: 50%;
+            height: 18vh;
+            width: 9vw;
+            background-image: url("guaxinim.jpg");
+            background-size: cover;
+            margin-left: 8px;
+        }
+        #box3 #img{
+            float: left;
+            border-radius: 50%;
+            height: 18vh;
+            width: 9vw;
+            background-image: url("guaxinim.jpg");
+            background-size: cover;
+            margin-left: 8px;
+        }
+        #box4 #img{
+            float: left;
+            border-radius: 50%;
+            height: 18vh;
+            width: 9vw;
+            background-image: url("guaxinim.jpg");
+            background-size: cover;
+            margin-left: 8px;
         }
     </style>
 
@@ -29,10 +75,18 @@
 <body>
 
     <div class="container">
-        <div class="box" id="box1"></div>
-        <div class="box" id="box2"></div>
-        <div class="box" id="box3"></div>
-        <div class="box" id="box4"></div>
+        <div class="box" id="box1">
+            <p id="img"></p>
+        </div>
+        <div class="box" id="box2">
+            <p id="img"></p>
+        </div>
+        <div class="box" id="box3">
+            <p id="img"></p>
+        </div>
+        <div class="box" id="box4">
+            <p id="img"></p>
+        </div>
     </div>
     
 </body>
