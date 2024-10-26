@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Exemplo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "A A . B"
+                "C container2 container2 container2"
+                "C container2 container2 container2";
+            grid-template-columns: 2fr 0.5fr 1fr 1fr;
+            gap: 10px;
+            width: 100vw;
+            height: 100vh;
+            
+        }
+        .container2 {
+            grid-area: container2;
+            display: grid;
+            grid-template-areas: 
+                "E F G"
+                "M I J";
+            gap: 10px;
+            background-color: #333;
+            padding: 30px;
+            border-radius: 5%;
+        }
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5%;
+        }
+
+        .A { grid-area: A; }
+        .B { grid-area: B; }
+        .C { grid-area: C; }
+
+        .E { grid-area: E; background-color: #ccc; color: black; }
+        .F { grid-area: F; background-color: #ccc; color: black; }
+        .G { grid-area: G; background-color: #ccc; color: black; }
+        .I { grid-area: I; background-color: #ccc; color: black; }
+        .J { grid-area: J; background-color: #ccc; color: black; }
+        .M { grid-area: M; background-color: #ccc; color: black; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box A">A</div>
+        <div class="box B">B</div>
+        <div class="box C">C</div>
+        <div class="container2">
+            <div class="box E">E</div>
+            <div class="box F">F</div>
+            <div class="box G">G</div>
+            <div class="box I">I</div>
+            <div class="box J">J</div>
+            <div class="box M">M</div>
+        </div>
+    </div>
+</body>
+</html>
