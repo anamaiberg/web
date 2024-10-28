@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "left-aside banner right-aside"
+                "left-aside main-content right-aside"
+                "left-aside low-content right-aside"
+                "footer footer footer";
+            gap: 10px;
+            grid-template-rows: 100px 200px 600px 200px 100px;
+            grid-template-columns: 200px 1fr 200px;
+        }
+
+        .header { grid-area: header; background: yellow; text-align: center; }
+        .banner { grid-area: banner; background: red; text-align: center; }
+        .left-aside { grid-area: left-aside; background: green; }
+        .main-content { grid-area: main-content; background: blue; text-align: center; }
+        .right-aside { grid-area: right-aside; background: orange; }
+        .low-content { grid-area: low-content; background: green; }
+        .footer { grid-area: footer; background: blue; text-align: center; }
+
+        @media screen and (max-width: 437px) {
+            .container {
+                grid-template-areas:
+                    "header"
+                    "banner"
+                    "left-aside"
+                    "main-content"
+                    "right-aside"
+                    "low-content"
+                    "footer";
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 100px 100px 100px 873px 100px 100px 100px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="banner">Banner</div>
+        <div class="left-aside">Left-aside</div>
+        <div class="main-content">Main-content</div>
+        <div class="right-aside">Right-aside</div>
+        <div class="low-content">Low-content</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
