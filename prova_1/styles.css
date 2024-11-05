@@ -11,7 +11,6 @@ header {
     display: flex;
     top: 0;
     left: 0;
-    z-index: 1000;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -38,6 +37,9 @@ header {
 
 .navegacao {
     display: flex;
+   position: fixed;
+   left: 400px;
+   gap: 100px;
 }
 
 .navegacao li {
@@ -141,6 +143,7 @@ header {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    margin: 100px;
 }
 
 .produto{
@@ -219,6 +222,7 @@ button:hover{
     padding: 20px;
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 .carrinho produto {
@@ -272,6 +276,13 @@ input[type="checkbox"]{
 }
 
 @media (max-width: 768px) {
+    .navegacao {
+        display: flex;
+        position: fixed;
+        left: 200px;
+        gap: 10px;
+    }
+
     .categorias {
         flex-wrap: wrap;
         justify-content: center;
@@ -297,15 +308,26 @@ input[type="checkbox"]{
 
     header {
         flex-direction: column;
-        align-items: flex-start;
         width: 150px;
         height: 100vh;
         padding: 10px;
     }
 
-    .logo {
-        margin-bottom: 20px;
+    .navegacao {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 130px;
+    }
+
+    .navegacao li{
+        margin-bottom: 30px;
         
+    }
+
+
+    .logo img{
+        width: 100px;
     }
 
     .menu-container {
@@ -326,8 +348,7 @@ input[type="checkbox"]{
     }
 
     /* Conteúdo principal ao lado direito */
-    .container {
-        
+    .container, .container_listagem {
         margin-top: 0;
         padding: 20px;
         display: flex;
@@ -343,7 +364,7 @@ input[type="checkbox"]{
         width: 100%;
     }
 
-    .categorias div, .destaques_item, .destaques_header {
+    .categorias div, .destaques_item, .destaques_header, .produto, .text {
         width: 60%;
         margin: 0 auto;
         margin-left: 150px;
