@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="InputText">Insira o Texto</label>
+    <input type="text" id="InputText">
+    <button>Copiar</button>
+    <div id="textos"></div>
+
+    <script>
+        let InputText=document.querySelector("#InputText")
+        let div_textos=document.querySelector("#textos")
+        
+        let btn=document.querySelector("button").addEventListener("click", ()=> {
+            let str=InputText.value;
+            InputText.value="";
+
+            let novo_p=document.createElement("p");
+            novo_p.innerHTML=str;
+            novo_p.style.color="#000000";
+            div_textos.appendChild(novo_p)
+        })
+    </script>
+</body>
+</html>

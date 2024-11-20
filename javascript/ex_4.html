@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="text">
+        <button id="button_palindromo">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        let p_resultado=document.querySelector("#resultado");
+        let input_text=document.querySelector("#text");
+
+        function E_palindromo(inicial){
+            return inicial==inicial.split("").reverse().join("")
+        }
+
+        document.addEventListener("click", ()=>{
+            if(E_palindromo(input_text.value)){
+                p_resultado.innerHTML="E palindromo"
+            }
+            else{
+                p_resultado.innerHTML="Nao e palindromo"
+            }
+        })
+        
+    </script>
+</body>
+</html>
