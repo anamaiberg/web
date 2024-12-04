@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nota" type="text">
+    <button id="salvar">Salvar</button>
+    <ul>
+
+    </ul>
+
+    <script>
+        let inputnota=document.querySelector("#nota");
+        let btnsalvar=document.querySelector("#salvar");
+        let lista=document.querySelector("ul");
+        let notas=[];
+
+        btnsalvar.addEventListener("click", ()=> {
+            notas.push(inputnota.value);
+            localStorage.setItem(notas.length-1, notas[notas.length-1]);
+            atualizalista();
+        })
+
+        function atualizalista(){
+            lista.innerHTML="";
+            notas.forEach((nota, index)=>{
+                let li=document.createElement("li");
+                li.innerText=inputnota.value;
+                lista.appendChild(li);
+                inputnota.value="";
+            })
+        }
+
+        function carreganotas(){
+           
+        }
+
+    </script>
+</body>
+</html>
