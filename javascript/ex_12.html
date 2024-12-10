@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="status"></div>
+    <div id="pessoas"></div>
+
+    <script>
+        var xhttp = new XMLHttpRequest(); 
+
+        xhttp.onreadystatechange = function() {
+            /*
+            readyState status:
+            0 - Connection not initiated
+            1 - Connection opened
+            2 - Request sent
+            3 - Waiting for response
+            4 - Response received
+            status - HTTP request status: 200=OK, 404=Not Found
+            */
+            if (this.readyState == 4 && this.status == 200) {
+                var dstatus = document.getElementById("status");
+                dstatus.innerHTML = "readyState: " + this.readyState + " | status: " + this.status;
+
+                var pessoas = JSON.parse(this.responseText);
+                var divpessoas = document.getElementById("pessoas");
+                
+                for (let i = 0; i < pessoas.length; i++) {
+                    divpessoas.innerHTML += `
+                        <div style="border:1px solid black; margin:10px; padding:10px;">
+                            <p><strong>Nome:</strong> ${pessoas[i].nome}</p>
+                            <p><strong>Idade:</strong> ${pessoas[i].idade}</p>
+                            <p><strong>Profissão:</strong> ${pessoas[i].profissao}</p>
+                            <p><strong>Salário:</strong> ${pessoas[i].salario}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            if (this.readyState == 4 && this.status == 404) {
+                alert("Arquivo não encontrado");
+            }
+        }
+
+        xhttp.open("GET", "pessoas.json", true);
+        xhttp.send(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pessoas"></div>
+
+    <script>
+        var divpessoas = document.getElementById("pessoas");
+        var p= fetch("pessoas.json")
+        .then(response=>response.json())
+        .then((data)=>{
+            
+                for (let i = 0; i < data.length; i++) {
+                    divp=`
+                        <div style="border:1px solid black; margin:10px; padding:10px;">
+                            <p><strong>Nome:</strong> ${data[i].nome}</p>
+                            <p><strong>Idade:</strong> ${data[i].idade}</p>
+                            <p><strong>Profissão:</strong> ${data[i].profissao}</p>
+                            <p><strong>Salário:</strong> ${data[i].salario}</p>
+                        </div>
+                    `;
+                    divpessoas.innerHTML+=divp;
+                }
+        })
+    </script>
+</body>
+</html>

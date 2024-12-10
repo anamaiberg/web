@@ -1,0 +1,14 @@
+[
+    {
+        "nome":"Edson",
+        "idade":"24",
+        "profissao":"programador",
+        "salario":"6000.00"
+    },
+    {
+        "nome":"Betina",
+        "idade":"24",
+        "profissao":"programadora",
+        "salario":"20000.00"
+    }
+]
