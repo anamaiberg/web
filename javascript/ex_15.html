@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="key">
+    <button>Buscar</button>
+    <div class="filmes"></div>
+    <script>
+        let inputtext=document.querySelector("#key");
+        document.querySelector("button").addEventListener("click", ()=>{
+            document.querySelector(".filmes").innerHTML="";
+            buscaFilmes(inputtext.value);
+        })
+
+        function buscaFilmes(keywork){
+            apikey="f77bfada"
+            url="http://www.omdbapi.com/?s=matrix&apikey="+apikey
+
+            fetch(url)
+            .then(response => response.json())
+            .then(dados => {
+                console.log(dados);
+                dados.Search.forEach(element => {
+                    document.querySelector(".filmes").innerHTML+=bannerFilm(element)
+                });
+                
+            })
+        }
+
+        function bannerFilm(json){
+            poster=`<div class="poster">
+                        <h2>${json.Title}</h2>
+                    </div>`
+            return poster;
+        }
+    </script>
+</body>
+</html>
