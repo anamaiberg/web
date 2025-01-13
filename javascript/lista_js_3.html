@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <button>Calcular soma</button>
+    <p id="resultado"></p>
+    <script>
+        let num1=document.querySelector("#num1") 
+        let num2=document.querySelector("#num2")
+        let botao=document.querySelector("button").addEventListener("click", () => {
+            let valor1 = parseFloat(num1.value) || 0;
+            let valor2 = parseFloat(num2.value) || 0;
+
+            let soma = valor1 + valor2;
+
+            document.querySelector("#resultado").textContent = `Resultado: ${soma}`;
+        });                
+    </script>
+</body>
+</html>

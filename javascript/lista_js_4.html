@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Gerar número aleatório</button>
+    <p id="resultado"></p>
+
+    <script>
+        let max=1000;
+        let min=0;
+        document.querySelector("button").addEventListener("click", ()=>{
+            document.querySelector("#resultado").innerHTML=Math.round(Math.random()*(max-min))+min;
+        })
+    </script>
+</body>
+</html>

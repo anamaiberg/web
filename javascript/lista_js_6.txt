@@ -1,0 +1,2 @@
+O segundo código apresenta um problema na execução porque o body está abaixo do script. 
+Assim, o javascript está tentando acessar um objeto que ainda não foi criado no código.
