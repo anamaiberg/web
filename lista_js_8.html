@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="min" type="number">
+    <input id="max" type="number">
+    <button>Procurar os números nesse intervalo</button>
+    <p id="resultado"></p>
+
+    <script>
+        let min=document.querySelector("#min") 
+        let max=document.querySelector("#max")
+        let botao=document.querySelector("button").addEventListener("click", () => {
+            let intervalo_inicial = parseFloat(min.value) || 0;
+            let intervalo_final = parseFloat(max.value) || 0;
+
+            function valida_primo(numero) {
+                if (numero < 2) return false; 
+                for (let i = 2; i <= Math.sqrt(numero); i++) {
+                    if (numero % i === 0) {
+                        return false; 
+                    }
+                }
+                return true; 
+            }
+
+            function encontra_primos(inicio, fim) {
+                const primos = [];
+                for (let i = inicio; i <= fim; i++) {
+                    if (valida_primo(i)) {
+                        primos.push(i);
+                    }
+                }
+                return primos;
+            }
+
+            const primos = encontra_primos(intervalo_inicial, intervalo_final);
+
+            document.querySelector("#resultado").textContent = `Números primos entre ${intervalo_inicial} e ${intervalo_final}: ${primos}`;
+        });                
+    </script>
+</body>
+</html>

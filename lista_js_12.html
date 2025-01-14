@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="min">Mínimo:</label>
+    <input id="min" type="number">
+    <label for="max">Máximo:</label>
+    <input id="max" type="number">
+    <button>Gerar número aleatório</button>
+    <p id="resultado"></p>
+
+    <script>
+        let minInput=document.querySelector("#min") 
+        let maxInput=document.querySelector("#max")
+        const resultados = [];
+
+        function gera_aleatorio(){
+            let min = parseInt(minInput.value);
+            let max = parseInt(maxInput.value);
+            let resultado=document.querySelector("#resultado");
+            let numero_aleatorio=Math.round(Math.random()*(max-min))+min;
+            resultados.push(numero_aleatorio);
+            resultado.textContent = `Lista de aleatórios: ${resultados.join(", ")}`;
+        }
+
+        document.querySelector("button").addEventListener("click", gera_aleatorio);
+    </script>
+</body>
+</html>

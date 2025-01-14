@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Gerar número aleatório</button>
+    <p id="resultado"></p>
+
+    <script>
+        let max=100;
+        let min=0;
+        const resultados = [];
+
+        function gera_aleatorio(){
+            let resultado=document.querySelector("#resultado");
+            let numero_aleatorio=Math.round(Math.random()*(max-min))+min;
+            resultados.push(numero_aleatorio);
+            resultado.textContent = `Lista de aleatórios: ${resultados.join(", ")}`;
+        }
+
+        document.querySelector("button").addEventListener("click", gera_aleatorio);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+        }
+        .container div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="box1"></div>
+        <div id="box2"></div>
+        <div id="box3"></div>
+        <div id="box4"></div>
+        <div id="box5"></div>
+    </div>
+
+    <script>
+        function randColor() {
+            return Math.floor(Math.random() * 256).toString(16).padStart(2, "0");
+        }
+
+        function changeAllColors() {
+            document.querySelectorAll('.container div').forEach(div => {
+                div.style.backgroundColor = `#${randColor()}${randColor()}${randColor()}`;
+            });
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.code === "Space") {
+                changeAllColors();
+            }
+        });
+    </script>
+</body>
+</html>
