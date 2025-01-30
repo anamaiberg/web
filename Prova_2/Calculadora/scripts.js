@@ -10,80 +10,31 @@ class Calculator {
   }
 
   addNumber(number) {
-    console.log(number);
     if (number === "." && this.currentText.innerText.includes(".")) {
       return;
     }
-    this.currentOperation = number;
-    this.updateDisplay();
+    this.currentText.innerText += number;
   }
 
   processOperation(operation) {
-    if (this.currentText.innerText === "" && operation !== "C") {
-      if (this.previousText.innerText !== "") {
-        this.changeOperation(operation);
-      }
-      return;
-    }
-
-    let outcome;
-    let previous = +this.previousText.innerText.split(" ")[0];
-    let current = +this.currentText.innerText;
-
-    switch(operation) {
-      case "+":
-        outcome = previous + current;
-        this.updateDisplay(outcome, operation, current, previous);
-        break;
-      case "-":
-        outcome = previous - current;
-        this.updateDisplay(outcome, operation, current, previous);
-        break;
-      case "*":
-        outcome = previous * current;
-        this.updateDisplay(outcome, operation, current, previous);
-        break;
-      case "/":
-        outcome = previous / current;
-        this.updateDisplay(outcome, operation, current, previous);
-        break;
-
-      case "DEL":
-        this.processDelete();
-        break;
-      case "CE":
-        this.processClearEntry();
-        break;
-      case "C":
-        this.processClear();
-        break;
-      case "=":
-        this.processEqual();
-        break;
-
-      default:
-        return;
-    }
-  }
-
-  updateDisplay(outcome = null, operation = null, current = null, previous = null) {
-    if (outcome === null) {
-      this.currentText.innerText += this.currentOperation;
+    if (operation === "DEL") {
+      this.processDelete();
+    } else if (operation === "CE") {
+      this.processClearEntry();
+    } else if (operation === "C") {
+      this.processClear();
+    } else if (operation === "=") {
+      this.processEqual();
     } else {
-      if (previous === 0) {
-        outcome = current;
-      }
-      this.previousText.innerText = `${outcome} ${operation}`;
-      this.currentText.innerText = "";
+      this.addOperation(operation);
     }
   }
 
-  changeOperation(operation) {
+  addOperation(operation) {
     const mathOperations = ["+", "-", "*", "/"];
-    if (!mathOperations.includes(operation)) {
-      return;
+    if (mathOperations.includes(operation) && this.currentText.innerText !== "") {
+      this.currentText.innerText += ` ${operation} `;
     }
-    this.previousText.innerText = this.previousText.innerText.slice(0, -1) + operation;
   }
 
   processDelete() {
@@ -100,8 +51,24 @@ class Calculator {
   }
 
   processEqual() {
-    let operation = this.previousText.innerText.split(" ")[1];
-    this.processOperation(operation);
+    const expression = this.currentText.innerText.trim();
+
+    if (this.validateExpression(expression)) {
+      try {
+        const result = eval(expression);
+        this.previousText.innerText = expression;
+        this.currentText.innerText = result;
+      } catch {
+        this.currentText.innerText = "Erro";
+      }
+    } else {
+      this.currentText.innerText = "Entrada Inválida";
+    }
+  }
+
+  validateExpression(expression) {
+    const validChars = /^[0-9+\-*/().\s]+$/;
+    return validChars.test(expression);
   }
 }
 
@@ -111,8 +78,7 @@ buttons.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     const value = event.target.innerText;
 
-    if (+value >= 0 || value === ".") {
-      console.log(value);
+    if (!isNaN(value) || value === ".") {
       calc.addNumber(value);
     } else {
       calc.processOperation(value);
