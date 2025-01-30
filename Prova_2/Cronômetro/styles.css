@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Orbitron", serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 4rem;
+    height: 100vh;
+    background-color: #c3c3c3;
+}
+
+.container h2 {
+    color: #b34555;
+}
+
+.display {
+    display: flex;
+    font-size: 40px;
+    font-weight: bold;
+    color: #d6707f;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: #cd5f70;
+    min-width: 90px;
+}
+
+#miliseconds {
+    font-size: 30px;
+    color: #d07b88;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.button {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid #b34555;
+    color: #b34555;
+    background-color: #dabbbf;
+    transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #d399a1;
+}
+
+#pause, #resume {
+    display: none;
+}
+
+#pauseHistory {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+#pauseHistory li {
+    background-color: #e7b4c4;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #4b3b3d;
+    font-weight: bold;
+}
