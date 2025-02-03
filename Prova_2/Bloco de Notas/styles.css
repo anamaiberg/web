@@ -100,10 +100,9 @@ body {
     padding: 20px;
     word-wrap: break-word;
     display: none; 
+    resize: none;
 }
 
-
 .note.expanded textarea {
-    display: block;
-    
+    display: block; 
 }
