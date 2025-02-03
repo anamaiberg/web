@@ -24,7 +24,6 @@ function showsList(json){
     }
 
     json.Search.forEach(element => {
-        console.log(element);
         let item = document.createElement('div');
         item.classList.add('col');
 
