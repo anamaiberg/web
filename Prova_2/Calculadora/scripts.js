@@ -67,7 +67,7 @@ class Calculator {
   }
 
   validateExpression(expression) {
-    const validChars = /^[0-9+\-*/().\s]+$/;
+    const validChars = /^[0-9+\-*/.\s]+$/;
     return validChars.test(expression);
   }
 }
