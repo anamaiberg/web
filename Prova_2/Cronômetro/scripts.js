@@ -12,27 +12,25 @@ let interval;
 let isRunning = false; 
 let startTime = 0; 
 let timePassed = 0; 
-let pauseTime = 0; 
+
 let pauses = []; 
 
 function updateClock() {
     const currentTime = Date.now();
-    const time = timePassed + (currentTime - startTime); 
+    const time = timePassed + (currentTime - startTime);
 
-    const hours = Math.floor(time / 3600000);
-    const minutes = Math.floor((time % 3600000) / 60000);
-    const seconds = Math.floor((time % 60000) / 1000);
-    const milliseconds = time % 1000;
+    const formattedTime = formatTime(time);
+    const [hours, minutes, seconds, milliseconds] = formattedTime.split(":");
 
-    hour.innerHTML = String(hours).padStart(2, "0");
-    minute.innerHTML = String(minutes).padStart(2, "0");
-    second.innerHTML = String(seconds).padStart(2, "0");
-    milisecond.innerHTML = String(milliseconds).padStart(3, "0");
+    hour.innerHTML = hours;
+    minute.innerHTML = minutes;
+    second.innerHTML = seconds;
+    milisecond.innerHTML = milliseconds;
 }
 
 function startClock() {
     if (!isRunning) {
-        startTime = Date.now() - timePassed; 
+        startTime = Date.now(); 
         interval = setInterval(updateClock, 10); 
         isRunning = true;
 
@@ -48,7 +46,6 @@ function pauseClock() {
         isRunning = false;
         timePassed += Date.now() - startTime; 
 
-        // Registra a pausa no histórico
         const pauseItem = document.createElement("li");
         pauseItem.textContent = `Pausa em: ${formatTime(timePassed)}`;
         pauseHistory.appendChild(pauseItem);
@@ -94,15 +91,14 @@ function formatTime(time) {
     return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}:${String(milliseconds).padStart(3, "0")}`;
 }
 
-// Atalhos de teclado
 document.addEventListener("keydown", (event) => {
-    if (event.key === "i" || event.key === "I") {
+    if (event.key === "i") {
         startClock();
-    } else if (event.key === "p" || event.key === "P") {
+    } else if (event.key === "p") {
         pauseClock();
-    } else if (event.key === "c" || event.key === "C") {
+    } else if (event.key === "c") {
         resumeClock();
-    } else if (event.key === "r" || event.key === "R") {
+    } else if (event.key === "r") {
         resetClock();
     }
 });
