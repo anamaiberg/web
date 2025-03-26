@@ -33,7 +33,7 @@ class Calculator {
   addOperation(operation) {
     const mathOperations = ["+", "-", "*", "/"];
     if (mathOperations.includes(operation) && this.currentText.innerText !== "") {
-      this.currentText.innerText += ` ${operation} `;
+      this.currentText.innerText += `${operation}`;
     }
   }
 
